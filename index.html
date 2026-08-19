@@ -292,8 +292,17 @@ footer strong{color:#fff;}
 }
 #toTop.show{opacity:1;pointer-events:auto;}
 
+/* ---------- Floating print button ---------- */
+#printBtn{
+  position:fixed;top:24px;right:24px;height:40px;border-radius:100px;padding:0 16px;
+  background:var(--coral);color:#fff;border:none;box-shadow:var(--shadow-pop);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:6px;z-index:40;font-size:13.5px;font-weight:600;
+}
+#printBtn:hover{background:var(--coral-dark);}
+#printBtn svg{width:15px;height:15px;flex:0 0 auto;}
+
 @media print{
-  .topbar,.sidebar,#toTop,.content-toolbar,.hero .stats{display:none !important;}
+  .sidebar,#toTop,#printBtn,.content-toolbar,.hero .stats{display:none !important;}
   .card-body{display:block !important;}
   .card{break-inside:avoid;}
 }
@@ -362,6 +371,10 @@ footer strong{color:#fff;}
   <p>Prepared by <strong>Syssero</strong>, A Rotation Digital Company, for your Workday 2026 R2 release cycle. Source: official Workday release note documentation, linked on each item.</p>
 </footer>
 
+<button id="printBtn" title="Print / Save PDF" onclick="window.print()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+  Print / Save
+</button>
 <button id="toTop" title="Back to top">↑</button>
 
 
